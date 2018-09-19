@@ -1,0 +1,86 @@
+{
+  "name": "feathers-forward",
+  "version": "1.0.0",
+  "description": "A Feathers service addapter for forwarding messages to another feathers application",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/touch4it/feathers-forward.git"
+  },
+  "bugs": {
+    "url": "https://github.com/touch4it/feathers-forward/issues"
+  },
+  "homepage": "https://github.com/touch4it/feathers-forward",
+  "author": "Touch4IT, s.r.o. <hi@touch4it.com> (https://touch4it.com/)",
+  "main": "lib/",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "xo lib/",
+    "test": "npm run lint"
+  },
+  "contributors": [
+    "Dušan Matejka <dusan.matejka@touch4it.com>"
+  ],
+  "keywords": [
+    "feathers",
+    "feathers-plugin",
+    "service",
+    "forward"
+  ],
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ],
+    "esnext": true,
+    "globals": [
+      "sails",
+      "async",
+      "_"
+    ],
+    "rules": {
+      "camelcase": "off",
+      "no-multi-spaces": [
+        "error",
+        {
+          "ignoreEOLComments": true
+        }
+      ],
+      "spaced-comment": [
+        "error",
+        "always",
+        {
+          "block": {
+            "exceptions": [
+              "*"
+            ],
+            "markers": [
+              "!"
+            ]
+          }
+        }
+      ],
+      "unicorn/explicit-length-check": "off",
+      "unicorn/filename-case": "off"
+    },
+    "space": true
+  },
+  "dependencies": {
+    "@feathersjs/errors": "^3.3.3",
+    "axios": "^0.18.0",
+    "url-join": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "xo": "^0.23.0"
+  }
+}
