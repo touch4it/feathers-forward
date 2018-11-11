@@ -1,6 +1,6 @@
 {
   "name": "feathers-forward",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Feathers service addapter for forwarding messages to another feathers application",
   "license": "MIT",
   "engines": {
@@ -73,6 +73,7 @@
   "dependencies": {
     "@feathersjs/errors": "^3.3.3",
     "axios": "^0.18.0",
+    "underscore": "^1.9.1",
     "url-join": "^4.0.0"
   },
   "devDependencies": {
