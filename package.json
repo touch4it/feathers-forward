@@ -1,6 +1,6 @@
 {
   "name": "feathers-forward",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Feathers service addapter for forwarding messages to another feathers application",
   "license": "MIT",
   "engines": {
@@ -71,15 +71,17 @@
     "space": true
   },
   "dependencies": {
-    "@feathersjs/errors": "^3.3.3",
+    "@feathersjs/authentication": "^2.1.13",
+    "@feathersjs/errors": "^3.3.4",
     "axios": "^0.18.0",
+    "underscore": "^1.9.1",
     "url-join": "^4.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.6.0",
+    "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "xo": "^0.23.0"
   }
