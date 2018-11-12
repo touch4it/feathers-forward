@@ -14,7 +14,9 @@ Configure [Feathers application](https://feathersjs.com) to forward all unknown 
 
 __Options:__
 
-- `uri` (**required**) - Uri to remote server
+- `uri`        (**required**) - Uri to remote server
+- `reqHeaders`                - Headers to forward from REST req object
+- `resHeaders`                - Headers to be added to REST res object from forwarded response
 
 
 ## Example
@@ -54,7 +56,9 @@ app.configure(middleware);
 app.configure(services);
 // Forward everything else
 app.configure(forward({
-  uri: 'https://example.com'
+  uri: 'https://example.com',
+  reqHeaders: ['Authorization'],
+  resHeaders: ['custom-header']
 }));
 
 // Configure a middleware for 404s and the error handler
