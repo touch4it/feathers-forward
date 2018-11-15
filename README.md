@@ -15,8 +15,9 @@ Configure [Feathers application](https://feathersjs.com) to forward all unknown 
 __Options:__
 
 - `uri`        (**required**) - Uri to remote server
-- `reqHeaders`                - Headers to forward from REST req object
-- `resHeaders`                - Headers to be added to REST res object from forwarded response
+- `endpoint`                  - Type of endpoint, for now support `feathers` (not specified === `feathers`) and everything else is default behaviour of request parsing
+- `reqHeaders`                - Headers to forward from REST req object (case sensitive)
+- `resHeaders`                - Headers to be added to REST res object from forwarded response (case sensitive)
 
 
 ## Example
@@ -57,7 +58,8 @@ app.configure(services);
 // Forward everything else
 app.configure(forward({
   uri: 'https://example.com',
-  reqHeaders: ['Authorization'],
+  endpoint: 'feathers',
+  reqHeaders: ['authorization'],
   resHeaders: ['custom-header']
 }));
 
