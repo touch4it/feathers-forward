@@ -32,7 +32,8 @@ const cors = require('cors');
 const feathers = require('@feathersjs/feathers');
 const configuration = require('@feathersjs/configuration');
 const express = require('@feathersjs/express');
-const forward = require('feathers-forward').configure;
+const forwardMiddleware = require('feathers-forward').middleware;
+const forwardConfigure = require('feathers-forward').configure;
 
 const middleware = require('./middleware');
 const services = require('./services');
@@ -53,10 +54,11 @@ app.configure(express.rest());
 
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
+app.configure(forwardMiddleware); // IMPORTANT
 // Set up our services (see `services/index.js`)
 app.configure(services);
 // Forward everything else
-app.configure(forward({
+app.configure(forwardConfigure({ // IMPORTANT
   uri: 'https://example.com',
   endpoint: 'feathers',
   reqHeaders: ['authorization'],
