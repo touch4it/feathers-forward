@@ -1,10 +1,10 @@
 {
   "name": "feathers-forward",
-  "version": "2.0.0",
-  "description": "A Feathers service addapter for forwarding messages to another feathers application",
+  "version": "3.0.0",
+  "description": "A Feathers service adapter for forwarding messages to another Feathers application",
   "license": "MIT",
   "engines": {
-    "node": ">= 6"
+    "node": ">= 12"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,12 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint": "xo lib/",
+    "lint": "eslint --ext .js --no-error-on-unmatched-pattern lib/index.js lib/* lib/**/*",
     "test": "npm run lint"
   },
   "contributors": [
-    "Dušan Matejka <dusan.matejka@touch4it.com>"
+    "Dušan Matejka <dusan.matejka@touch4it.com>",
+    "Viktor Šulák <sulak@touch4it.com>"
   ],
   "keywords": [
     "feathers",
@@ -32,57 +33,17 @@
     "service",
     "forward"
   ],
-  "xo": {
-    "envs": [
-      "node",
-      "mocha"
-    ],
-    "esnext": true,
-    "globals": [
-      "sails",
-      "async",
-      "_"
-    ],
-    "rules": {
-      "camelcase": "off",
-      "no-multi-spaces": [
-        "error",
-        {
-          "ignoreEOLComments": true
-        }
-      ],
-      "spaced-comment": [
-        "error",
-        "always",
-        {
-          "block": {
-            "exceptions": [
-              "*"
-            ],
-            "markers": [
-              "!"
-            ]
-          }
-        }
-      ],
-      "unicorn/explicit-length-check": "off",
-      "unicorn/filename-case": "off"
-    },
-    "space": true
-  },
   "dependencies": {
-    "@feathersjs/authentication": "^2.1.15",
-    "@feathersjs/errors": "^3.3.6",
-    "axios": "^0.18.0",
-    "underscore": "^1.9.1",
-    "url-join": "^4.0.0"
+    "axios": "^0.27.2",
+    "underscore": "^1.13.3",
+    "url-join": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.12.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.3",
-    "xo": "^0.23.0"
+    "eslint": "^8.16.0",
+    "eslint-config-touch4it": "^14.0.0"
+  },
+  "peerDependencies": {
+    "@feathersjs/authentication": "^4.0.0",
+    "@feathersjs/errors": "^4.0.0"
   }
 }

@@ -1,0 +1,8 @@
+{
+	"extends": [
+		"touch4it/node"
+	],
+	"rules": {
+		"unicorn/prefer-module": "off"
+	}
+}
